@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "Python async in-memory DB"
+version = "0.1.0"
+description = ""
+authors = ["Dan O'Sullivan <python@osull.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.78.0"
+uvicorn = "^0.17.6"
+SQLAlchemy = "^1.4.37"
+aiosqlite = "^0.17.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+pylint = "^2.13.9"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.'BASIC']
+good-names = "db"
+disable ="C0111,R0903"
+# C0111 = missing docstring
+# R0903 = too few public methods
+
+[tool.isort]
+profile = "black"
